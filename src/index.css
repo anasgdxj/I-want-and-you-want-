@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-canvas: #faf6ee;
+    --bg-surface: #ffffff;
+    --border-hairline: #e7e0d3;
+  }
+
+  .dark {
+    --bg-canvas: #151310;
+    --bg-surface: #1e1b17;
+    --border-hairline: #2f2a24;
+  }
+
+  html {
+    font-family: 'Cairo', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-[#faf6ee] text-stone-900 antialiased transition-colors duration-200 dark:bg-[#151310] dark:text-stone-100;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
